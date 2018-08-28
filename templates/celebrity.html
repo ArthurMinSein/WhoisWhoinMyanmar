@@ -78,10 +78,10 @@
         <div class="mdl-layout--small-screen-only mdl-layout__header-row">
            <form action="/" method="POST">
             <div class="mdl-textfield mdl-js-textfield  mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="search" id="sample3">
+            <input class="mdl-textfield__input" type="text" name="search" id="sample3" style="width:250px;">
              <label class="mdl-textfield__label" for="sample3">Search</label>
           </div>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" name="submit">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" name="submit" style="margin-left:300px;">
               <i class="material-icons">search</i>
            </button>
           </form>
@@ -92,11 +92,16 @@
         <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">WhosWhoMM</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="home.html">Home</a>
-          <a class="mdl-navigation__link" href="politician.html">Politician</a>
-          <a class="mdl-navigation__link" href="businessleader.html">Business Leader</a>
-          <a class="mdl-navigation__link" href="celebrity.html">Celebrity</a>
-          <a class="mdl-navigation__link" href="about.html">About</a>
+          <a class="mdl-navigation__link" href="home.html">
+             <i class="material-icons" style="padding-right:15px;">home</i>Home</a>
+          <a class="mdl-navigation__link" href="politician.html">
+             <i class="material-icons" style="padding-right:15px;">people</i>Politician</a>
+          <a class="mdl-navigation__link" href="businessleader.html">
+             <i class="material-icons" style="padding-right:15px;">people</i>Business Leader</a>
+          <a class="mdl-navigation__link" href="celebrity.html">
+             <i class="material-icons" style="padding-right:15px;">people</i>Celebrity</a>
+          <a class="mdl-navigation__link" href="about.html">
+             <i class="material-icons" style="padding-right:15px;">info</i>About</a>
         </nav>
         </div>
 
@@ -107,7 +112,7 @@
             <div class="row">
                     <div class="col s12">
 
-          <h2 style="margin-left: 8%;margin-bottom: 5%;">Celebrity</h4>
+          <h3 style="margin-left: 8%;margin-bottom: 5%;">Celebrity</h3>
             
             <style>
                 .demo-card-wide.mdl-card {
@@ -133,7 +138,7 @@
                 
                 {% for person in cele %}
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                      <div class="mdl-card__title" style={{person.photo}}>
+                      <div class="mdl-card__title" style=background:url("{{person.photo}}")>
                       </div>
                       <div style="font-size:20px;margin-left:20px;margin-top:20px;">
                        {{person.name}}
@@ -142,7 +147,7 @@
                      {{person.occupation}}
                       </div>
                       <div class="mdl-card__actions mdl-card--border">
-<a href="{{ url_for('profile',initialname=person.initialname) }}" target="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+<a href="{{ url_for('profile',initialname=person.initialname) }}" target="" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="color:rgb(244,61,61);">
                         View Profile
                       </a>
                       </div>
